@@ -8,26 +8,49 @@ package playlist;
  *
  * @author deand
  */
-public class LikedSongs{
-    private String sSongName;
-    private String sGenre;
+public class LikedSongs {
 
-    public LikedSongs(String sSongName, String sGenre) {
-        this.sSongName = sSongName;
-        this.sGenre = sGenre;
+    // Instance variables to store song name and genre
+    private String songName;
+    private String genre;
+
+    /**
+     * Constructs a new LikedSongs object with the given song name and genre.
+     *
+     * @param songName The name of the song.
+     * @param genre The genre of the song.
+     */
+    public LikedSongs(String songName, String genre) {
+        this.songName = songName;
+        this.genre = genre;
     }
 
+    /**
+     * Retrieves the name of the song.
+     *
+     * @return The song name.
+     */
     public String getTitle() {
-        return sSongName;
+        return songName;
     }
 
+    /**
+     * Retrieves the genre of the song.
+     *
+     * @return The genre of the song.
+     */
     public String getGenre() {
-        return sGenre;
+        return genre;
     }
 
+    /**
+     * Provides a string representation of the LikedSongs object.
+     *
+     * @return A string containing the song name and genre.
+     */
     @Override
     public String toString() {
-        return sSongName + " (" + sGenre + ")";
+        return "Song name: " + songName + " | Genre: " + genre;
     }
-    
+
 }
