@@ -551,8 +551,10 @@ public class PlaylistGUI extends javax.swing.JFrame implements StackInterface {
                 genA.add(song);
                 genACount++;
                 foundInFav = true;
+                favTa.setText("");
+                favTa.append(song.toString() + "\n");
                 System.out.println("Song has been moved to the next Playlist - Genre A (Hip-Hop)");
-                break;
+                return;
             }
         }
         for (LikedSongs song : genA) {
@@ -562,8 +564,10 @@ public class PlaylistGUI extends javax.swing.JFrame implements StackInterface {
                 genB.add(song);
                 genBCount++;
                 foundInGenA = true;
+                genATa.setText("");
+                genATa.append(song.toString() + "\n");
                 System.out.println("Song has been moved to the next Playlist - Genre B (Rap)");
-                break;
+                return;
             }
         }
 
@@ -574,26 +578,12 @@ public class PlaylistGUI extends javax.swing.JFrame implements StackInterface {
                 likedSongs.add(song);
                 favCount++;
                 foundInGenB = true;
+                genBTa.setText("");
+                genBTa.append(song.toString() + "\n");
                 System.out.println("Song has been moved to the next Playlist - Favourites");
-                break;
+                return;
             }
         }
-
-        favTa.setText(songName);
-        genATa.setText("");
-        genBTa.setText("");
-
-        for (LikedSongs song : likedSongs) {
-            favTa.append(song.toString() + "\n");
-        }
-        for (LikedSongs song : genA) {
-            genATa.append(song.toString() + "\n");
-        }
-        for (LikedSongs song : genB) {
-            genBTa.append(song.toString() + "\n");
-        }
-
-
     }//GEN-LAST:event_moveBtnActionPerformed
 
     private void countBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_countBtnActionPerformed
